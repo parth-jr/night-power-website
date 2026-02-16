@@ -3,36 +3,23 @@
 const WA_NUMBER = "917303040534"; // without + sign
 
 
-/* ===== DROPDOWN PRODUCT NAVIGATION ===== */
+/* ===== CONTACT US NAV LINK ===== */
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function() {
+  const contactLink = document.querySelector('a[href="#contact-form"]');
   
-  const dropdownItems = document.querySelectorAll(".dropdown-item");
-  
-  dropdownItems.forEach(item => {
-    item.addEventListener("click", function(e) {
-      e.preventDefault();
-      
-      const productName = this.dataset.product;
-      
-      // Find matching stage item
-      const stageItem = Array.from(document.querySelectorAll(".stage-item")).find(
-        item => item.dataset.name === productName
-      );
-      
-      if (stageItem) {
-        const index = Array.from(document.querySelectorAll(".stage-item")).indexOf(stageItem);
-        current = index;
-        updateStage();
-        
-        // Scroll to product stage
-        setTimeout(() => {
-          document.querySelector(".product-stage").scrollIntoView({ behavior: "smooth" });
-        }, 100);
-      }
+  if (contactLink) {
+    contactLink.addEventListener("click", function(e) {
+      // Let default scroll behavior happen
+      setTimeout(function() {
+        const contactForm = document.getElementById("newsletterForm");
+        const firstInput = contactForm.querySelector('input[type="text"]');
+        if (firstInput) {
+          firstInput.focus();
+        }
+      }, 500); // Wait for scroll to complete
     });
-  });
-
+  }
 });
 
 
@@ -240,7 +227,7 @@ posterImages.forEach(img => {
 });
 
 
-/* ===== NEWSLETTER FORM ===== */
+/* ===== CONTACT FORM ===== */
 
 document.addEventListener("DOMContentLoaded", function() {
   const newsletterForm = document.getElementById("newsletterForm");
@@ -249,33 +236,25 @@ document.addEventListener("DOMContentLoaded", function() {
     newsletterForm.addEventListener("submit", function(e) {
       e.preventDefault();
       
-      const formData = new FormData(newsletterForm);
       const name = newsletterForm.querySelector('input[type="text"]').value;
-      const email = newsletterForm.querySelector('input[type="email"]').value;
       const phone = newsletterForm.querySelector('input[type="tel"]').value;
       
-      // You can send this data to your backend here
-      // For now, we'll show a success message
-      
-      const message = `Thank you ${name} for subscribing! 🎉\n\nWe'll send exclusive offers to ${email}`;
-      alert(message);
-      
-      // Optional: Send to WhatsApp
+      // Send to WhatsApp
       const whatsappMessage = 
-        `New Newsletter Signup 📧%0A` +
+        `New Enquiry 📞%0A` +
         `Name: ${encodeURIComponent(name)}%0A` +
-        `Email: ${encodeURIComponent(email)}%0A` +
         `Phone: ${encodeURIComponent(phone)}`;
       
-      // Uncomment to auto-send to WhatsApp
-      // window.open(`https://wa.me/${WA_NUMBER}?text=${whatsappMessage}`, '_blank');
+      window.open(`https://wa.me/${WA_NUMBER}?text=${whatsappMessage}`, '_blank');
+      
+      alert(`Thank you ${name}! We'll contact you shortly at ${phone}`);
       
       newsletterForm.reset();
     });
   }
 });
 
-/* ===== POPUP SIGNUP MODAL ===== */
+/* ===== POPUP CONTACT MODAL ===== */
 
 document.addEventListener("DOMContentLoaded", function() {
   const popup = document.getElementById("signupPopup");
@@ -304,25 +283,17 @@ document.addEventListener("DOMContentLoaded", function() {
     e.preventDefault();
     
     const name = popupForm.querySelector('input[type="text"]').value;
-    const email = popupForm.querySelector('input[type="email"]').value;
     const phone = popupForm.querySelector('input[type="tel"]').value;
     
-    // Generate discount code
-    const discountCode = "NIGHT20";
-    
-    // Show success message
-    alert(`🎉 Congratulations ${name}!\n\nYour 20% discount code: ${discountCode}\n\nWe've sent this code to ${email}.\nUse it on your next order!`);
-    
-    // Optional: Send to WhatsApp
+    // Send to WhatsApp
     const whatsappMessage = 
-      `🎁 New Newsletter Signup%0A` +
+      `New Enquiry (Popup) 📞%0A` +
       `Name: ${encodeURIComponent(name)}%0A` +
-      `Email: ${encodeURIComponent(email)}%0A` +
-      `Phone: ${encodeURIComponent(phone)}%0A` +
-      `Discount Code: ${discountCode}`;
+      `Phone: ${encodeURIComponent(phone)}`;
     
-    // Uncomment to auto-send to WhatsApp
-    // window.open(`https://wa.me/${WA_NUMBER}?text=${whatsappMessage}`, '_blank');
+    window.open(`https://wa.me/${WA_NUMBER}?text=${whatsappMessage}`, '_blank');
+    
+    alert(`Thank you ${name}! We'll contact you shortly at ${phone}`);
     
     // Close popup
     popup.classList.remove("show");

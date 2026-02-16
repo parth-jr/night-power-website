@@ -14,7 +14,10 @@
     <div class="container">
       <div class="brand">
         <img src="images/logo/night-power-logo.png" alt="Night Power Logo" class="logo">
-        <span>Night Power</span>
+        <div class="brand-text">
+          <span class="brand-title">Night Power</span>
+          <span class="brand-slogan">Regain your strength, Regain your confidence.</span>
+        </div>
       </div>
       
       <!-- Navigation Menu Inline -->
@@ -32,7 +35,7 @@
           </div>
         </div>
 
-        <a href="#contact" class="nav-link">Contact Us</a>
+        <a href="#contact-form" class="nav-link">Contact Us</a>
       </nav>
     </div>
   </header>
@@ -72,7 +75,7 @@
   </section>
 
   <!-- Products -->
-    <section class="product-stage">
+    <section class="product-stage" id="products">
 
     <h2>Our Products</h2>
 
@@ -119,27 +122,11 @@
     </div>
 
     <div class="stage-info">
-        <div class="promo-text">✨ Special Offers Available!</div>
-        <div class="promo-subtext">Subscribe to our newsletter and get a <strong>20% discount code</strong> in your email</div>
+        <div class="promo-text">✨ Premium Ayurvedic Products!</div>
+        <div class="promo-subtext">100% Natural ingredients for your health and wellness</div>
         <button class="btn buy stage-buy">Order on WhatsApp</button>
     </div>
 
-    </section>
-
-    <!-- ===== POSTER SECTION ===== -->
-
-    <section class="posters" id="products">
-    <div class="container">
-        <h2>Special Offers</h2>
-
-        <div class="poster-grid">
-        <img src="images/posters/shilajit-poster-text.png" alt="Shuddh Shilajit Offer">
-        <img src="images/posters/mens-flyer-oil-poster-text.png" alt="Men's Flyer Oil Offer">
-        <img src="images/posters/mens-flyer-capsules-poster-text.png" alt="Men's Flyer Capsules Offer">
-        <img src="images/posters/bone-fit-oil-poster-text.png" alt="Bone-Fit Oil Offer">
-        <img src="images/posters/bone-fit-capsules-poster-text.png" alt="Bone-Fit Capsules Offer">
-        </div>
-    </div>
     </section>
 
 
@@ -178,16 +165,15 @@
   </section>
 
 
-  <!-- Newsletter Sign Up -->
-  <section class="newsletter">
+  <!-- Contact Form -->
+  <section class="newsletter" id="contact-form">
     <div class="container">
-      <h2>Stay Updated</h2>
-      <p>Subscribe to get exclusive offers and health tips delivered to your inbox</p>
+      <h2>Contact for Enquiry</h2>
+      <p>Have questions about our products? Get in touch with us and we'll help you find the right solution for your needs</p>
       <form class="newsletter-form" id="newsletterForm">
         <input type="text" placeholder="Your Name" required class="form-input">
-        <input type="email" placeholder="Your Email" required class="form-input">
-        <input type="tel" placeholder="Your Phone" required class="form-input">
-        <button type="submit" class="btn primary">Subscribe Now</button>
+        <input type="tel" placeholder="Your Phone Number" required class="form-input">
+        <button type="submit" class="btn primary">Submit Enquiry</button>
       </form>
     </div>
   </section>
@@ -195,21 +181,52 @@
   <!-- Order Section -->
   <section class="order" id="contact">
     <div class="container">
-      <h2>How to Order</h2>
-      <ol>
-        <li>Click WhatsApp or Call Us</li>
-        <li>Share your requirement</li>
-        <li>Confirm order and delivery details</li>
-        <li>Cash on Delivery Available (Minimum ₹500 advance for COD)</li>
-      </ol>
-
-      <p><strong>Special Offers:</strong></p>
-      <p>🎁 30% OFF on Prepaid Orders<br>
-      🎁 20% OFF on Shuddh Shilajit</p>
-
-      <div class="order-buttons">
-        <a href="tel:+917303040534" class="btn call">📞 Call Now</a>
-        <a href="https://wa.me/917303040534" class="btn whatsapp">💬 WhatsApp Now</a>
+      <div class="order-grid">
+        
+        <!-- How to Contact Us -->
+        <div class="order-column">
+          <h2>How to Contact Us</h2>
+          <ol>
+            <li>Click WhatsApp or Call Us</li>
+            <li>Share your requirement</li>
+            <li>Confirm order and delivery details</li>
+            <li>Cash on Delivery Available (Minimum ₹500 advance for COD)</li>
+          </ol>
+          
+          <div class="order-buttons">
+            <a href="tel:+917303040534" class="btn call">📞 Call Now</a>
+            <a href="https://wa.me/917303040534" class="btn whatsapp">💬 WhatsApp Now</a>
+          </div>
+        </div>
+        
+        <!-- Special Offers -->
+        <div class="order-column special-offers-box">
+          <h2>🎁 Special Offers</h2>
+          <div class="offers-content">
+            <div class="offer-item">
+              <span class="offer-icon">🎉</span>
+              <div class="offer-text">
+                <strong>30% OFF</strong>
+                <p>on Prepaid Orders</p>
+              </div>
+            </div>
+            <div class="offer-item">
+              <span class="offer-icon">✨</span>
+              <div class="offer-text">
+                <strong>20% OFF</strong>
+                <p>on Shuddh Shilajit</p>
+              </div>
+            </div>
+            <div class="offer-item">
+              <span class="offer-icon">📦</span>
+              <div class="offer-text">
+                <strong>Free Shipping</strong>
+                <p>on orders above ₹999</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
       </div>
     </div>
   </section>
@@ -241,20 +258,19 @@
     </a>
   </div>
 
-  <!-- Popup Signup Form -->
+  <!-- Popup Contact Form -->
   <div class="popup-overlay" id="signupPopup">
     <div class="popup-container">
       <button class="popup-close" id="closePopup">&times;</button>
       <div class="popup-content">
-        <h2>🎁 Get 20% OFF</h2>
-        <p>Subscribe to our newsletter and receive an exclusive <strong>20% discount code</strong> in your email!</p>
+        <h2>📞 Contact Us</h2>
+        <p>Have questions about our products? <strong>Get in touch with us</strong> and we'll help you!</p>
         <form class="popup-form" id="popupNewsletterForm">
           <input type="text" placeholder="Your Name" required class="popup-input">
-          <input type="email" placeholder="Your Email" required class="popup-input">
-          <input type="tel" placeholder="Your Phone" required class="popup-input">
-          <button type="submit" class="btn primary popup-submit">Get My Discount Code</button>
+          <input type="tel" placeholder="Your Phone Number" required class="popup-input">
+          <button type="submit" class="btn primary popup-submit">Send Enquiry</button>
         </form>
-        <p class="popup-footer">Join 1000+ customers who are already enjoying exclusive deals!</p>
+        <p class="popup-footer">We respond within 24 hours!</p>
       </div>
     </div>
   </div>
